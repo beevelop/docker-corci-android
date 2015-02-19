@@ -1,5 +1,8 @@
 FROM webratio/ant
 
+# Ensure git
+RUN apt-get update && apt-get install -y git
+
 # Installs i386 architecture required for running 32 bit Android tools
 RUN dpkg --add-architecture i386 && \
     apt-get update -y && \
@@ -30,9 +33,6 @@ RUN cd && \
     rm node-v${NODE_VERSION}-linux-x64.tar.gz
 
 ENV PATH ${PATH}:/opt/node/bin
-
-# Ensure git
-RUN apt-get install -y git
 
 # Installs Cordova
 # Forces a platform add in order to preload libraries
