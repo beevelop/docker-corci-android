@@ -47,6 +47,16 @@ RUN npm install -g npm && \
     cd && \
     rm -rf /tmp/fakeapp
 
+# Install and run CorCI-android
+ENV CORCI_HOST localhost
+ENV CORCI_PORT 8000
+ENV CORCI_PROTOCOL http
+ENV CORCI_LOCATION ./builds
+ENV CORCI_NAME Larry
+
+RUN npm install -g beevelop/corci-android
+RUN corci-android -h ${CORCI_HOST} -p ${CORCI_PORT} -q ${CORCI_PROTOCOL} -l ${CORCI_LOCATION} -n ${CORCI_NAME}
+
 VOLUME ["/data"]
 WORKDIR /data
 
