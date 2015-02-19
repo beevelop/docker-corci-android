@@ -55,7 +55,8 @@ ENV CORCI_LOCATION ./builds
 ENV CORCI_NAME Larry
 
 RUN npm install -g beevelop/corci-android
-RUN corci-android -h ${CORCI_HOST} -p ${CORCI_PORT} -q ${CORCI_PROTOCOL} -l ${CORCI_LOCATION} -n ${CORCI_NAME}
+RUN corci-android -h ${CORCI_HOST} -p ${CORCI_PORT} -q ${CORCI_PROTOCOL} -l ${CORCI_LOCATION} -n ${CORCI_NAME} &
+RUN jobs
 
 VOLUME ["/data"]
 WORKDIR /data
