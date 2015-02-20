@@ -1,7 +1,9 @@
 FROM webratio/ant
 
 # Ensure git
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get install -y p7zip-full
 
 # Installs i386 architecture required for running 32 bit Android tools
 RUN dpkg --add-architecture i386 && \
