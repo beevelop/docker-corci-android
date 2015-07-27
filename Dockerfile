@@ -9,6 +9,8 @@ ENV ANDROID_API_LEVELS android-15,android-16,android-17,android-18,android-19,an
 ENV ANDROID_BUILD_TOOLS_VERSION 22.0.1
 ENV NODE_VERSION 0.12.7
 
+ENV PATH ${PATH}:${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}
+
 ENV CORCI_NAME Larry
 
 RUN apt-get update && apt-get upgrade -y
