@@ -5,8 +5,10 @@
 > Dockerized CorCI-Android-Agent
 
 ## Example
+Before running the CorCI-Android container, launch a CorCI-Server container as described in [CorCI-Server's README](https://github.com/beevelop/docker-corci-server).
+
 ```
-docker run -d --name corci-larry --link corci-master:corci beevelop/corci-android
+docker run -d --name corci-larry --link corci-duke:corci beevelop/corci-android
 ```
 
 
